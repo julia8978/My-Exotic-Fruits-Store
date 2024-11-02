@@ -122,7 +122,7 @@ function renderItems(arr) {
 
     buttonUpItemCounter.addEventListener("click", function addToCart() {
       const itemCounter = shopItem.querySelector(".item-count");
-      let count = parseInt(itemCounter.textContent);
+      const count = parseInt(itemCounter.textContent);
 
       if (count >= 0) {
         itemCounter.textContent = count + 1;
