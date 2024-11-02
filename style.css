@@ -318,3 +318,7 @@ footer {
   background-color: rgb(226, 24, 111);
   color: #FFF;
 }
+
+.cart-count::after {
+  content: " Br";
+}

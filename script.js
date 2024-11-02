@@ -250,9 +250,10 @@ iconCart.addEventListener("click", function openCloseCart() {
 function putCart(elementCart) {
   const cartCount = document.querySelector(".cart-count");
   const totalPrice = document.querySelector(".total-price");
+  
   const count = parseInt(cartCount.textContent);
 
-  cartCount.textContent = count + 1;
+  cartCount.textContent = count + parseInt(elementCart.querySelector(".price").textContent);
 
   totalPrice.textContent = parseInt(totalPrice.textContent) + parseInt(elementCart.querySelector(".price").textContent);
 
@@ -263,7 +264,7 @@ function deleteFromCart(elementCart) {
   const cartCount = document.querySelector(".cart-count");
   const totalPrice = document.querySelector(".total-price");
   const count = parseInt(cartCount.textContent);
-  cartCount.textContent = count - 1;
+  cartCount.textContent = count - parseInt(elementCart.querySelector(".price").textContent);
 
   const itemsCart = document.querySelectorAll(".cart-item");
 
