@@ -1,0 +1,390 @@
+:root {
+  --dark: #262020;
+  --peach: #ECCCB2;
+  --white: #FFF;
+  --gray: rgb(118, 118, 118);
+}
+
+html,
+body {
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #fffdf7;
+  color: #2b2b2b;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.nav a,
+footer a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+  font-family: 'Lora', serif;
+  color: #114e46;
+  font-weight: bold;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+}
+
+li a {
+  display: inline-block;
+  transition: color 0.25s ease, transform 0.25s ease;
+  color: #114e46;
+}
+
+li:not(:first-child) a:hover {
+  color: rgb(226, 24, 111);
+  transform: scale(1.1);
+}
+
+.nav input:focus {
+  outline-color: var(--peach);
+  outline-style: solid;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.site-search {
+  display: flex;
+}
+
+.site-search input {
+  border: 1px solid var(--gray);
+  border-radius: 4px 0 0 4px;
+}
+
+.site-search button {
+  background: #114e46;
+  border: 1px solid var(--gray);
+  -webkit-text-stroke: 1px white;
+  border-radius: 0 4px 4px 0;
+  border-left: 0;
+}
+
+#shop-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.shop-item {
+  width: calc(25% - 17px);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 20px;
+  background-color: white;
+}
+
+.shop-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.shop-item .content {
+  padding: 10px 10px 0 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-grow: 1;
+}
+
+.shop-item img {
+  width: 100%;
+  flex-shrink: 3;
+  object-fit: cover;
+  height: auto;
+}
+
+.shop-item h1 {
+  font-size: 20px;
+  margin-top: 0;
+}
+
+.shop-item p {
+  margin-top: 0;
+}
+
+.shop-item .price {
+  background-color: #114E46;
+  color: #FFF;
+  padding: 4px 8px;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block;
+  margin-top: auto;
+}
+
+.shop-item .footer {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.shop-item .score {
+  cursor: pointer;
+  color: #BAAC6F;
+}
+
+.shop-item .tags {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.shop-item .tag {
+  background: rgb(226, 24, 111);
+  color: #FFF;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px 0;
+}
+
+#nothing-found {
+  color: var(--dark);
+  position: absolute;
+  white-space: nowrap;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 500;
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.item-counter-cart {
+  display: flex;
+  height: 26px;
+  background-color: #262020;
+}
+
+.item-count {
+  width: 25px;
+  background-color: #FFF;
+  margin: 1px auto;
+  align-content: center;
+  text-align: center;
+}
+
+.item-counter-cart button {
+  width: 25px;
+}
+
+.cart {
+  display: block;
+  padding: 5px;
+  font-size: 35px;
+  border: 1px solid black;
+  border-radius: 10%;
+  background: #114e46;
+  color: #fff;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+
+.cart-shell {
+  display: block;
+  padding: 15px;
+  border: 1px solid black;
+  max-height: 500px;
+  border-radius: 10%;
+  position: fixed;
+  bottom: 80px;
+  right: 10px;
+  color: #be9c8c;
+  background-color: #FFF;
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  max-height: 400px;
+  max-width: 400px;
+}
+
+.cart-item {
+  padding: 5px 8px;
+  margin: 1px;
+  background-color: #fff;
+  display: flex;
+  height: 40px;
+  white-space: nowrap;
+}
+
+.cart-item img {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 3;
+  object-fit: cover;
+  margin-right: 3px;
+}
+
+.cart-item h2 {
+  font-size: 18px;
+  align-self: center;
+  margin: 0;
+  margin-right: 15px;
+  overflow: hidden;
+}
+
+.cart-item .count {
+  align-self: center;
+  margin-right: 3px;
+}
+
+.cart-item .count::after {
+  content: " ед. - ";
+}
+
+.cart-item .price {
+  align-self: center;
+  margin-right: 5px;
+}
+
+.btn-delete {
+  align-self: center;
+  margin: 0 auto;
+}
+
+.cart-item .price::after {
+  content: " Br";
+}
+
+.total-amount {
+  display: flex;
+  align-items: center;
+  font-size: large;
+  justify-content: space-between;
+}
+
+.total-amount p {
+  margin-right: 5px;
+}
+
+.total-price {
+  margin-right: 5px;
+}
+
+.total-price::after {
+  content: " Br";
+}
+
+.openClose {
+  position: absolute;
+  opacity: 0;
+}
+
+.sale {
+  display: inline-block;
+  margin: 1px;
+  padding: 10px;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 20px;
+  background-color: rgb(226, 24, 111);
+  cursor: pointer;
+  transition: all 0.8;
+}
+
+.sale:hover {
+  background: linear-gradient(135deg, rgb(131, 66, 128), rgb(226, 24, 111));
+  color: #fff;
+}
+
+.active {
+  background: linear-gradient(135deg, rgb(131, 66, 128), rgb(226, 24, 111));
+  color: #FFF;
+}
+
+.cart-count::after {
+  content: " Br";
+}
+
+button {
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #ff9800;
+  color: white;
+  transform: scale(1.05);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.shop-item {
+  animation: fadeInUp 0.4s ease forwards;
+}
+
+.contact-info a {
+  color: #333;
+  text-decoration: none;
+  transition: all .7s;
+}
+
+.contact-info a:hover {
+  color: rgb(226, 24, 111);
+}
